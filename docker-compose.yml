@@ -1,0 +1,19 @@
+# To run this interactively and remove the running image:
+#   $ docker-compose run --rm aosp
+#
+# Add -w `pwd` to log in at the current pwd.
+#   $ docker-compose run --rm -w `pwd` aosp
+
+version: '3'
+services:
+  aosp:
+    image: winksaville/aosp:ub-18.04
+    network_mode: bridge
+    privileged: true
+    volumes:
+     - /home:/home
+     - /etc/group:/etc/group:ro
+     - /etc/gshadow:/etc/gshadow:ro
+     - /etc/passwd:/etc/passwd:ro
+     - /etc/shadow:/etc/shadow:ro
+     - /etc/sudoers:/etc/sudoers:ro
