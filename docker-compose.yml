@@ -9,7 +9,7 @@ services:
   aosp:
     image: winksaville/aosp:ub-18.04
     network_mode: bridge
-    privileged: true
+    privileged: false
     volumes:
      - /home:/home
      - /etc/group:/etc/group:ro
@@ -17,3 +17,4 @@ services:
      - /etc/passwd:/etc/passwd:ro
      - /etc/shadow:/etc/shadow:ro
      - /etc/sudoers:/etc/sudoers:ro
+     - /etc/sudoers.d:/etc/sudoers.d:ro
